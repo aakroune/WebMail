@@ -1,0 +1,49 @@
+<html ng-app="myApp"  ng-controller="myCtrl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Accueil-Les avengers</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  
+    <script src="ngScript.js"></script>
+    <script src="mesFonctions.js"></script>
+</head>
+<body>
+
+
+<div class="container">   
+<nav class="navbar navbar-inverse">
+ <ul class="nav navbar-nav">
+  <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+        <img 
+             src="logo-avengers.jpg">
+    </a>
+ <li class="dropdown">  <a class="dropdown-toggle" href="#">Accueil</a></li>
+
+  <li class="dropdown">  <a class="dropdown-toggle" href="#listeAvenger">Voir les avengers</a></li>
+  <li class="dropdown">  <a class="dropdown-toggle" href="#ajouterAvenger">Ajouter un avenger</a></li>
+   <li class="dropdown"> <a class="dropdown-toggle" href="#listeAgent" ng-click="showAgent()">Voir les agents</a></li>
+   
+   </ul>
+</nav>
+    <div ng-view></div>
+</div>
+</div>
+
+
+</body>
+
+</html>

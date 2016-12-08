@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp"  ng-controller="myCtrl">
+<head>
+<meta charset="utf-8">
+<title>Envoie de mail</title>
+
+
+  
+
+   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ 
+    <script src="../ngScript.js"></script>
+    <script src="../mesFonctions.js"></script>  
+</head>
+<body>
+  
+<form class="well" >
+  <fieldset>
+    
+    <legend>Vous désirez obtenir plus d'informations ? Ecrivez-nous:</legend>
+      
+    <div class="input-prepend">
+       
+        <input class="span3" id="prependedInput" ng-model="mail.sender"  placeholder="Votre adresse mail" type="text" >
+    </div>
+        <label class="control-label col-sm-2" for="lastName">Objet:</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="mail.subject" class="form-control" id="lastName" name="lastName" placeholder="Saisir l'objet">
+            </div>
+    <br/>
+        <input class="span4" ng-model="mail.description" type="text" placeholder="Sujet" name="sujet"required>
+      
+<!--         <textarea id="textarea" class="span10" rows="4" placeholder="Votre message" name="message" required></textarea> -->
+    <br/>
+      
+    <div class="form-actions">
+        <button type="submit" ng-click ="addMail(mail)" class="btn btn-primary">Envoyez</button>
+    </div>
+      
+  </fieldset>
+</form>
+          
+</body>
+</html>
