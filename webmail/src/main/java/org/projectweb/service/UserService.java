@@ -7,10 +7,10 @@ import org.projectweb.model.User;
 
 public interface UserService {
 	public void save(User user);
-	public List<Mail> findAll(Integer id);
-	public User getById(Integer id);
 	
 	public void sendMail(Integer id, Mail mail);
 	public List<User> getAll();
+	public List<Mail> findAllSend(Integer id);
+	public List<Mail> findAllRecu(Integer id);
 
 }

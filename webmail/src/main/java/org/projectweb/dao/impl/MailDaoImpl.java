@@ -22,10 +22,6 @@ public class MailDaoImpl implements MailDAO {
 	public void save(Mail mail) {
 	 entityManager.merge(mail);
 	}
-	
-//	public void del(Mail mail){
-//		entityManager.remove(mail);
-//	}
 
 	public List<Mail> findAllSend(Integer user_id) {
 		
@@ -34,11 +30,14 @@ public class MailDaoImpl implements MailDAO {
  		return listSend;
  	}
 
-	public List<Mail> loadInBox(Integer id) {
+	public List<Mail> findAllRecu(Integer id) {
 		String query = "Select m from Mail m INNER JOIN m.receivers u where u.id = :id";
 		return entityManager.createQuery(query, Mail.class)
 							.setParameter("id", id)	
 							.getResultList();
+	}
+
+	
 	}
 
 
@@ -50,4 +49,4 @@ public class MailDaoImpl implements MailDAO {
 
 	
 
-}
+

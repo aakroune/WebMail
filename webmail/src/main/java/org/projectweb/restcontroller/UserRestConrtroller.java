@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.projectweb.model.Mail;
 import org.projectweb.model.User;
-import org.projectweb.service.MailService;
 import org.projectweb.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController//Annotation 
-@RequestMapping("/rest/user/")
+@RequestMapping("/rest/user")
 public class UserRestConrtroller {
 	@Autowired
 	private UserService userService;
@@ -27,10 +26,9 @@ public class UserRestConrtroller {
 	}
 	
 	@RequestMapping(value="/add",method=RequestMethod.POST)
-	public User addUser(@RequestBody User user) {
+	public void addUser(@RequestBody User user) {
 		userService.save(user);
-		return user;
-	
+		
 	}
 	
 	@RequestMapping(value="{id}/sendmail", method=RequestMethod.POST)
@@ -38,22 +36,14 @@ public class UserRestConrtroller {
 		userService.sendMail(id, mail);
 	}
 	
-	
 	@RequestMapping(value="{id}/sent", method=RequestMethod.GET)
-	public  List<Mail>listMail(@PathVariable Integer id) {
+	public  List<Mail>listSent(@PathVariable Integer id) {
 	
-		return userService.findAll(id);
+		return userService.findAllSend(id);
 	}
-	
-//	@RequestMapping (value ="{id}/Recever", method =RequestMethod.GET)
-//	public List<User>listreceivers (@PathVariable Integer id, @RequestBody Mail mail){
-//		return userService.
-//	}
-//	
-	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	public User getUser(@PathVariable Integer id){
-		
-		return userService.getById(id);
-		
+	@RequestMapping(value="{id}/recu", method=RequestMethod.GET)
+	public List<Mail> listRecu(@PathVariable Integer id) {
+		return userService.findAllRecu(id);
 	}
+
 }

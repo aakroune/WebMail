@@ -24,18 +24,11 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
-	public List<Mail> findAll(Integer id) {
-		return userdao.findAll(id);
+	public List<Mail> findAllSend(Integer id) {
+		return maildao.findAllSend(id);
 	}
 
-	public User getById(Integer id) {
-		
-		return userdao.getById(id);
-	}
 	
-	public void delete(User user){
-		userdao.delete(user);
-	}
 
 	public void sendMail(Integer id, Mail mail) {
 		User sender = new User();
@@ -47,6 +40,15 @@ public class UserServiceImpl implements UserService {
 	public List<User> getAll() {
 		return userdao.getAll();
 	}
+
+	
+
+	public List<Mail> findAllRecu(Integer id) {
+	 return maildao.findAllRecu(id);
+	}
+
+
+
 
 
 

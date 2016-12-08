@@ -11,6 +11,8 @@ public interface MailDAO {
 	//public Mail getById(int id);
 	
 	public void save(Mail mail);
+
+	
 	
  // public void del(Mail mail);
 
